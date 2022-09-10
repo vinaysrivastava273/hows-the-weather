@@ -10,8 +10,7 @@ const currentTempEl = document.getElementById('current-temp');
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-const API_KEY ='147eb3d9e6377c3c175cec24c8731b9f';
-// 49cc8c821cd2aff9af04c9f98c36eb74
+const API_KEY = 'YOUR_API_KEY';
 
 setInterval(() => {
     const time = new Date();
@@ -113,13 +112,12 @@ function getWeatherData ( city ) {
 getWeatherData("Kharagpur")
 
 let weather = {
-    apiKey: "147eb3d9e6377c3c175cec24c8731b9f",
     fetchWeather: function (city) {
         fetch(
         "https://api.openweathermap.org/data/2.5/forecast?q=" +
             city +
             "&units=metric&appid=" +
-            this.apiKey
+            API_KEY
         )
         .then((response) => {
             if (!response.ok) {
